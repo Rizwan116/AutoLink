@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoLink Upload Files</title>
+
+    <link rel="icon" type="image/x-icon" href="./static/images/favicon.ico">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (optional) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* Custom styles */
+        @media (min-width: 768px) {
+            .custom-container {
+                width: 50%; /* 60% of the viewport width on desktop */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container custom-container">
+        <h2 class="text-center fs-2 mt-4 mb-5">Upload PDF and Excel File</h2>
+        <form class="flex-div" action="/" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="form-group">
+                        <label for="pdf_file">Select PDF File:</label>
+                        <input class="form-control-file" type="file" name="pdf_file" id="pdf_file" accept=".pdf" required>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="form-group">
+                        <label for="excel_file">Select Excel File:</label>
+                        <input class="form-control-file" type="file" name="excel_file" id="excel_file" accept=".xlsx" required>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="d-flex justify-content-center mt-4">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-upload"></i> Submit
+                </button>
+            </div>
+        </form>
+    </div>
+     <!-- Bootstrap JS and dependencies (optional) -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
