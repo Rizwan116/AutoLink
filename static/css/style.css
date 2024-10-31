@@ -1,11 +1,35 @@
+/* Reset some basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     height: 100vh;
     background-color: #f8f9fa;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #333;
+    color: #fff; */
+    /* color: #fff; */
+}
+ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style-type: none;
+}
+.justify-content-evenly {
+    justify-content: space-evenly;
 }
 .container {
+   
+}
+.custom-container {
     width: 100%;
     max-width: 600px;
     background: white;
@@ -20,4 +44,65 @@ body {
 }
 .input-field>label {
     top: 15px!important;
+}
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header nav ul {
+   
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    font-size: 16px;
+}
+a:hover {
+    text-decoration: none!important;
+}
+header nav ul li {
+    display: flex;
+    
+}
+
+header nav ul li a {
+    color: #434343;
+    text-decoration: none;
+}
+
+.profile-pic {
+    height: 100px;
+    border-radius: 50px;
+}
+.app-description {
+    
+}
+
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
 }

@@ -1,0 +1,55 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AutoLink Upload Files</title>
+    
+        <link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons (optional) -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+        <style>
+            /* Custom styles */
+            @media (min-width: 768px) {
+                .custom-container {
+                    width: 50%; /* 60% of the viewport width on desktop */
+                }
+            }
+        </style>
+    </head>
+<body>
+    <!-- Header Section -->
+    <header>
+       <div class="d-flex justify-content-evenly my-3 align-items-center">
+        <div class="logo">AutoLink PDF</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('new_pdf_linking') }}">New PDF Linking</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+       </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>@created by Rizwan Siddiqui</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

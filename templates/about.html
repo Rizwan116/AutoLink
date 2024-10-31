@@ -1,0 +1,35 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+
+{% block title %}About - AutoLink PDF{% endblock %}
+
+{% block content %}
+<div class="container my-5 pt-5">
+
+    <section id="app-description">
+        <h2>About the AutoLink App</h2>
+        <p>
+            The PDF Linking App is a custom web tool designed to streamline the process of adding dynamic links to PDF documents. This app allows users to upload a PDF file alongside an Excel file containing page numbers and associated URLs. The app automatically inserts links onto the specified pages of the PDF, providing an efficient solution for linking documents with a large number of reference points.
+        </p>
+        <h3>Features</h3>
+        <p>
+            <ul>
+                <li><strong>Automated Link Insertion</strong>: Uses Excel data to add links on the specified PDF pages without manual effort.</li>
+                <li><strong>Product Image Detection</strong>: Detects product images within PDFs that lack predefined highlight boxes and automatically places links near the identified images.</li>
+                <li><strong>User-Friendly Interface</strong>: Simple file upload and download options for easy usability.</li>
+                <li><strong>Error Handling</strong>: Validates Excel data to ensure correct page numbers and URL formatting, notifying users of any errors.</li>
+            </ul>
+        </p>
+        <h3>How It Works</h3>
+        <p>
+            Users upload a PDF and an Excel file. The app reads the data from the Excel file and applies the links directly to the PDF file, either based on pre-existing highlight boxes or by detecting areas around images if no highlights are found. After processing, the app outputs a modified PDF with active links, ready for download and use.
+        </p>
+        <h3>Technology Stack</h3>
+        <p>
+            Built with Python and Flask, this app utilizes PyMuPDF for PDF manipulation and Pandas for reading Excel files. Gunicorn serves the app on production servers, ensuring a fast and reliable user experience.
+        </p>
+    </section>
+
+
+</div>
+{% endblock %}

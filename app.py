@@ -4,6 +4,25 @@ import os
 import pandas as pd
 
 app = Flask(__name__)
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/new_pdf_linking')
+def new_pdf_linking():
+    return render_template('new_pdf_linking.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
 app.config['UPLOAD_FOLDER'] = 'uploads'
 
 def read_links_from_excel(file_path):
@@ -69,3 +88,6 @@ def upload_file():
 if __name__ == '__main__':
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     app.run(debug=True)
+
+
+    
