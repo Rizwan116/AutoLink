@@ -11,6 +11,15 @@ https://autolink.onrender.com/
 - Supports PDF and Excel file formats.
 - Processes links from the uploaded Excel file to update the PDF.
 
+- ## Excel Format Should be in This Format
+
+Page	URL
+1	    https://www.google.com/
+2	    https://www.google2.com/
+3	    https://www.google4.com/
+4	    https://www.google4.com/
+
+
 ## Technologies Used
 
 - **Frontend**: HTML, CSS (Bootstrap for styling)
