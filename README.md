@@ -13,11 +13,13 @@ https://autolink.onrender.com/
 
 - ## Excel Format Should be in This Format
 
-Page	URL
-1	    https://www.google.com/
-2	    https://www.google2.com/
-3	    https://www.google4.com/
-4	    https://www.google4.com/
+
+| Page | URL     |       
+| :-------- | :------- |
+| `1`      | `https://www.example.com` |
+| `2`      | `https://www.example2.com` |
+| `3`      | `https://www.example3.com` |
+| `4`      | `https://www.example4.com` |
 
 
 ## Technologies Used
