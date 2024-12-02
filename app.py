@@ -44,6 +44,10 @@ def read_links_from_excel(file_path):
 
 def replace_pdf_links(pdf_path, excel_file_path, output_pdf_path):
     links = read_links_from_excel(excel_file_path)  # Get the new links from the Excel file
+    if not links:
+        print("No links found in the Excel file. Please check the file content.")
+        return  # Exit early if no links are available
+    
     pdf_document = fitz.open(pdf_path)  # Open the PDF document
 
     link_index = 0  # Keep track of which new link we are adding
@@ -53,11 +57,14 @@ def replace_pdf_links(pdf_path, excel_file_path, output_pdf_path):
         # Remove all existing links first
         current_links = page.get_links()
         for current_link in current_links:
-            # print(f"Removing link on page {page_num + 1}: {current_link.get('uri', 'Unknown')}")
             page.delete_link(current_link)  # Delete the specific link
 
         # Add new links from the Excel file
-        for i in range(min(len(current_links), len(links))):
+        for i in range(len(current_links)):
+            if link_index >= len(links):
+                print(f"No more links to add for page {page_num + 1}.")
+                break
+
             # Get the new URL from the Excel file
             _, new_url = links[link_index]
             
@@ -74,13 +81,11 @@ def replace_pdf_links(pdf_path, excel_file_path, output_pdf_path):
             })
 
             link_index += 1  # Move to the next link in the list
-            
-            if link_index >= len(links):  # Stop if we've added all the new links
-                break
 
     # Save the updated PDF
     pdf_document.save(output_pdf_path)
-    pdf_document.close() 
+    pdf_document.close()
+
       
 # Route to handle file upload and PDF link replacement
 @app.route('/upload', methods=['GET', 'POST'])
